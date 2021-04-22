@@ -10,11 +10,8 @@ const moveUp = document.querySelector(".move-up ");
 const tabRow1 = document.getElementById('tab-row1');
 const tabRow2 = document.getElementById('tab-row2');
 const tabRow3 = document.getElementById('tab-row3');
-
-
-const flexLink1 = document.getElementById("flex-link1");
-const flexLink2 = document.getElementById("flex-link2");
-const flexLink3 = document.getElementById("flex-link3");
+const flexLinks = document.querySelectorAll("flex-link");
+console.log(flexLinks);
 
 /* hamburger menu*/
 
@@ -57,6 +54,21 @@ flexItems.forEach((items, index) =>{
     })
 })
 
+/*flex-lists functions */
+
+flexLinks.forEach((item, index) =>{
+    item.addEventListener('click', () => {
+     if (index === 0) {
+        item.classList.toggle("feature-active");
+     }else if (index === 1) {
+        item.classList.toggle("feature-active");
+     }else if (index === 2) {
+        item.classList.toggle("feature-active");
+     }
+     })
+    })
+
+
 /*sticky navbar */
 window.onscroll = function(){
     scrollfunc();
@@ -78,3 +90,4 @@ function backToTop(){
         moveUp.classList.remove("active");
     }
 }
+

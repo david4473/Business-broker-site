@@ -713,7 +713,7 @@ div.about-info p{
 
 /*FEATURES*/
 
-.feature-active{
+a.flex-link.feature-active{
     background: var(--orange);
     color: var(--white);
 }
