@@ -4,6 +4,7 @@ const nav = document.getElementById('nav');
 const list = document.getElementById('list');
 const flexItems = document.querySelectorAll(".flex-item");
 const navBar = document.querySelector(".nav-bar");
+const moveUp = document.querySelector(".move-up ");
 
 
 const tabRow1 = document.getElementById('tab-row1');
@@ -33,10 +34,7 @@ flexItems.forEach((items, index) =>{
          tabRow1.classList.add("active");
          tabRow2.classList.remove("active");
          tabRow3.classList.remove("active");
-        
-         flexLink1.classList.add("feature-active");
-         flexLink2.classList.remove("feature-active");
-         flexLink3.classList.remove("feature-active");
+
 
      }else if (index === 1) {
 
@@ -44,19 +42,12 @@ flexItems.forEach((items, index) =>{
         tabRow2.classList.add("active");
         tabRow3.classList.remove("active");
         
-        /* flexLink1.classList.remove("feature-active");
-        flexLink2.classList.add("feature-active");
-        flexLink3.classList.remove("feature-active"); */
 
      }else if (index === 2) {
 
         tabRow1.classList.remove("active");
         tabRow2.classList.remove("active");
         tabRow3.classList.add("active");
-
-        /* flexLink1.classList.remove("feature-active");
-        flexLink2.classList.remove("feature-active"); */
-        flexLink3.classList.add("feature-active");
 
      }else{
 
@@ -66,3 +57,24 @@ flexItems.forEach((items, index) =>{
     })
 })
 
+/*sticky navbar */
+window.onscroll = function(){
+    scrollfunc();
+    backToTop();
+}
+
+function scrollfunc(){
+    if (window.scrollY > 100) {
+        navBar.classList.add("sticky");
+    }else{
+        navBar.classList.remove("sticky");
+    }
+}
+
+function backToTop(){
+    if (window.scrollY > 100) {
+        moveUp.classList.add("active");
+    }else{
+        moveUp.classList.remove("active");
+    }
+}
