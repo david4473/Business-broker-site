@@ -25,6 +25,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 
+@media (max-width: 768px) {
+    html{
+       overflow-x: hidden !important;
+    }
+}
+
 body{
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
@@ -32,7 +38,9 @@ body{
     line-height: 1.5;
     color: var(--text-color);
     scroll-behavior: smooth;
+    overflow-x: hidden !important;
 }
+
 
 /*HEADER-CONTACT*/
 
@@ -283,6 +291,12 @@ nav li a:hover{
     #nav-icon1{
         height: 31px;
     }
+
+    .animated-icon {
+        margin-right: -1rem;
+        z-index: 9999;
+        position: relative;
+    }
 }
 
 
@@ -329,63 +343,61 @@ nav li a:hover{
 
 
 /*MOBILE NAV*/
+@media (max-width: 768px) {
+    .navbar-mobile {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(56, 61, 97, 0.9);
+        transition: 0.3s;
+        z-index: 999;
+    }
 
-/* nav i.mobile-nav-toggle {
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-    line-height: 0;
-    transition: 0.5s;
-  }
-  
+    .ul-nav {
+        display: block;
+        position: absolute;
+        top: 99px;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 0;
+        border-radius: 10px;
+        background-color: #fff;
+        overflow-y: auto;
+        transition: 0.3s;
+        width: 90%;
+        height: 50%;
+    }
 
-  .navbar-mobile {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(20, 21, 28, 0.9);
-    transition: 0.3s;
-    z-index: 999;
-  }
-  
-  .navbar-mobile  nav i.mobile-nav-toggle {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
-  
-  .navbar-mobile ul {
-    display: block;
-    position: absolute;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
-    padding: 10px 0;
-    border-radius: 10px;
-    background-color: #fff;
-    overflow-y: auto;
-    transition: 0.3s;
-  }
-  
-  .navbar-mobile a {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 15px;
-    color: #2a2c39;
-  }
-  
-  .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-    color: #fff;
-  }
-  
-  .navbar-mobile .getstarted {
-    margin: 15px;
-  } */
+
+    nav ul li{
+        color: black;
+        padding: 10px 20px;
+        margin: 15px;
+        font-size: 15px;
+        color: #2a2c39;
+        margin-bottom: .5em;
+    }
+
+    nav ul li a{
+        color: black;
+    }
+
+    nav ul li a:active{
+        background-color: var(--orange);
+        padding-right: 86%;
+    }
+}
+
+@media (max-width: 575px) {
+    .ul-nav {
+        width: 90%;
+    }
+}
+
   
 
 /*HERO-SECTION*/
@@ -687,6 +699,11 @@ div.about-info p{
 
 /*FEATURES*/
 
+.feature-active{
+    background: var(--orange);
+    color: var(--white);
+}
+
 section.features{
     width: 100%;
     padding: 150px 0;
@@ -746,11 +763,6 @@ ul.feature-cards li {
     box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
     border-radius: 10px;
     background: #fff;
-}
-
-a.flex-link:active{
-    background: var(--orange);
-    color: var(--white);
 }
 
 .flex-link i{
@@ -1613,3 +1625,17 @@ footer a{
     }
 }
 
+
+.move-up {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: var(--orange);
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
