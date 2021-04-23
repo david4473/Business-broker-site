@@ -165,7 +165,7 @@ window.onscroll = function(){
 }
 
 function scrollfunc(){
-    if (window.scrollY > 100) {
+    if (window.scrollY ) {
         navBar.classList.add("sticky");
     }else{
         navBar.classList.remove("sticky");
