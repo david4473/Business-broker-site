@@ -247,6 +247,10 @@ nav li a:hover{
     transform: rotate(-135deg);
   }
 
+  nav ul li a.active{
+    background-color: var(--orange);
+}
+
 
 
 @media (max-width: 768px) {
@@ -347,6 +351,7 @@ nav li a:hover{
     #nav-icon1{
         height: 31px;
     }
+
   
 }
 
@@ -400,6 +405,12 @@ nav li a:hover{
         background-color: var(--orange);
         padding-right: 86%;
     }
+
+    nav ul li a.active{
+        background-color: var(--orange);
+        padding-right: 86%;
+    }
+
 }
 
 @media (max-width: 575px) {
@@ -762,7 +773,7 @@ ul.feature-cards li {
     cursor: pointer;
 }
 
-.flex-item a:hover{
+.flex-item a:hover.active{
     color: var(--orange);
 }
 
