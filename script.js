@@ -5,6 +5,7 @@ const list = document.getElementById('list');
 const flexItems = document.querySelectorAll(".flex-item");
 const navBar = document.querySelector(".nav-bar");
 const moveUp = document.querySelector(".move-up ");
+const scrollElement = document.querySelectorAll(".js-scroll");
 
 /*services button selectors */
 const tabRow1 = document.getElementById('tab-row1');
@@ -165,7 +166,7 @@ window.onscroll = function(){
 }
 
 function scrollfunc(){
-    if (window.scrollY ) {
+    if (window.scrollY) {
         navBar.classList.add("sticky");
     }else{
         navBar.classList.remove("sticky");
@@ -180,3 +181,8 @@ function backToTop(){
     }
 }
 
+/*on scroll event */
+/* scrollElement.forEach((el) =>{
+    el.style.opacity = '0';
+}) 
+ */
